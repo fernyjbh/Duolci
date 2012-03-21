@@ -40,7 +40,7 @@ class ApiController extends CController
                         )
                 );
                 
-                // Terminate the script
+		// Terminate the script
                 $this->endScript($response, 1);
         }
         
@@ -122,7 +122,7 @@ class ApiController extends CController
 	 *
 	 **/
 	public function actionIndex()
-	{        
+	{      
 	        // Run the proper verifications needs to allow access to the requested API component
 	        $this->verification($_POST);
 	        
@@ -342,12 +342,10 @@ class ApiController extends CController
                                 )
                         );
                         
-                        $this->debug($response->attributes);
-                        
                         $token = new Tokens();
                         $token->attributes = array(
                                 'user_id'=>$response->attributes['id'],
-                                'token'=>Tokens::generateToken($response->attributes['id'], $encryptionKey)
+                                'token'=>$token->generateToken($response->attributes['id'], $encryptionKey)
                         );
                         
                         // If the token successfully saves, exit with a successful response code

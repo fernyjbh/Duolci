@@ -19,24 +19,24 @@ should you have any questions.</p>
 $request = array(
         'request'=>array(
                 'APIKey'=>'65d5661536cdc75c1fdf5c6de7bXrxh6FVxd9cFoOyIAVHD',
-                'method'=>'deleteKey',
-                'token'=>'9980648d29bbdcaee06a795f2ba64ad4',
+                'method'=>'authenticate',
                 'data'=>array(
-                        'key'=>"test'key",
-                        'value'=>'data2'
-                )
+                	'email'=>'charlesportwoodii@ethreal.net',
+			'password'=>''
+		)
         )
 );
 print_r($request);
 
 echo json_encode($request); 
+$json = '{"request":{"method":"authenticate","data":{"email":"charlesportwoodii@ethreal.net","password":"Iyanyariem19a"},"APIKey":"65d5661536cdc75c1fdf5c6de7bXrxh6FVxd9cFoOyIAVHD"}}';
 ?>
 <script>
         $(document).ready(function() {
                 $.ajax({
-                        url: 'http://localhost/duolci/api/',
+                        url: 'http://duolci.ethreal.net/api/',
                         type: 'POST',
-                        data: <? echo json_encode($request); ?>,
+                        data: <? echo $json; ?>,
                         success: function(data, textStatus, jqXHR)
                         {
                                 console.log(data);

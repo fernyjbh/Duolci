@@ -32,7 +32,7 @@ return array(
 	// application components
 	'components'=>array(
 		'session' => array(
-           		'sessionName' => 'iDistribution',
+           		'sessionName' => 'Duolci API',
 		),
 		// uncomment the following to enable URLs in path-format
 		'urlManager'=>array(
@@ -55,10 +55,6 @@ return array(
 			'schemaCachingDuration'=>3600,
 			'enableProfiling'=>true, 
 			),
-		// Set the default caching to APC Cache
-		'cache'=>array(
-			'class'=>'CApcCache',       	
-      ),
       // Enabled Memcache for future use
 		'memcache'=>array(
             'class'=>'system.caching.CMemCache',
